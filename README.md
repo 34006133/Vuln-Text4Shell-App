@@ -25,4 +25,4 @@ http://localhost
 ------
 ### Refs:
 - https://stackoverflow.com/questions/38700790/how-to-return-an-html-page-from-a-restful-controller-in-spring-boot
-- 
+- https://www.sqlitetutorial.net/sqlite-java/select/
