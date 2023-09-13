@@ -28,5 +28,11 @@ public class VulnApplication {
               return modelAndView;
     }
 
+    @RequestMapping(value = "/record", method = RequestMethod.GET)
+    @ResponseBody
+    public String record(@RequestParam(defaultValue = "") String name) {
+              return name;        
+    }
+
 }
 
