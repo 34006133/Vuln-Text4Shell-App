@@ -12,33 +12,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.ui.Model;
 
 @SpringBootApplication
 @RestController
 public class VulnApplication {
     public static void main(String[] args) {
-      SpringApplication.run(VulnApplication.class, args);
+            
+            SpringApplication.run(VulnApplication.class, args);
     }
     
     @RequestMapping(value = "/", method = RequestMethod.GET)
     @ResponseBody
     public ModelAndView index() {
-              ModelAndView modelAndView = new ModelAndView();
-              modelAndView.setViewName("index.html");
-              return modelAndView;
+            
+            ModelAndView modelAndView = new ModelAndView();
+            
+            modelAndView.setViewName("index.html");
+            
+            return modelAndView;
     }
 
-    @RequestMapping(value = "/record", method = RequestMethod.GET)
+    @RequestMapping(value = "/result", method = RequestMethod.GET)
     @ResponseBody
-    public String record(@RequestParam(defaultValue = "") String name) {
+    public String record(@RequestParam(defaultValue = "") String input) {
+            
             final StringSubstitutor interpolator = StringSubstitutor.createInterpolator();
-            try{
-                String out = interpolator.replace(name);
-                return out;    
-              }
+            
+            try {
+                String output = interpolator.replace(input);
+                return "Result:\n" + output;    
+            }
+            
             catch(Exception e) {
                 System.out.println(e);
             }
+
             return null;
     }
 }
