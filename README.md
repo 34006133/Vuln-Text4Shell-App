@@ -1,3 +1,6 @@
+## Requirements
+- Java 11, as Javascript engine is removed in JDK-15(+)
+
 ## Build
 ```bash
 ./mvnw clean package

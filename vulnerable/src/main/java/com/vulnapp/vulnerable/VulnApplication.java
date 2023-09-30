@@ -1,4 +1,4 @@
-package com.vulnapp.text4shell;
+package com.vulnapp.vulnerable;
 
 import org.apache.commons.text.StringSubstitutor;
 
@@ -31,8 +31,15 @@ public class VulnApplication {
     @RequestMapping(value = "/record", method = RequestMethod.GET)
     @ResponseBody
     public String record(@RequestParam(defaultValue = "") String name) {
-              return name;        
+            final StringSubstitutor interpolator = StringSubstitutor.createInterpolator();
+            try{
+                String out = interpolator.replace(name);
+                return out;    
+              }
+            catch(Exception e) {
+                System.out.println(e);
+            }
+            return null;
     }
-
 }
 

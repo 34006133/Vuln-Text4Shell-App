@@ -1,10 +1,10 @@
-package com.vulnapp.text4shell;
+package com.vulnapp.vulnerable;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Text4shellApplicationTests {
+class VulnerableApplicationTests {
 
 	@Test
 	void contextLoads() {
